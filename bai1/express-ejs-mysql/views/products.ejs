@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <h2>Danh sách sản phẩm</h2>
+
+    <form action="/search" method="GET">
+        <input type="text" name="keyword" placeholder="Tìm sản phẩm">
+        <button>Tìm kiếm</button>
+    </form>
+
+    <hr>
+
+    <h2>Add Product</h2>
+    <form action="/add" method="post">
+        Name: <input name="name"><br> Price: <input name="price"><br> Quantity: <input name="quantity"><br>
+        <button>Add</button>
+    </form>
+
+    <h2>Products</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <% products.forEach(p => { %>
+            <tr>
+                <td>
+                    <%= p.id %>
+                </td>
+                <td>
+                    <%= p.name %>
+                </td>
+                <td>
+                    <%= p.price %>
+                </td>
+                <td>
+                    <%= p.quantity %>
+                </td>
+                <td>
+                    <!-- NÚT SỬA -->
+                    <a href="/edit/<%= p.id %>">Sửa</a> |
+
+                    <!-- NÚT XÓA -->
+                    <a href="/delete/<%= p.id %>" onclick="return confirm('Xóa sản phẩm này?')">
+                   Xóa
+                </a>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>

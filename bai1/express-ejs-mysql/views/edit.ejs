@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <h2>Cập nhật sản phẩm</h2>
+
+    <form action="/update" method="POST">
+        <input type="hidden" name="id" value="<%= product.id %>">
+
+        <div>
+            <label>Tên</label>
+            <input type="text" name="name" value="<%= product.name %>" required>
+        </div>
+
+        <div>
+            <label>Giá</label>
+            <input type="number" name="price" value="<%= product.price %>" required>
+        </div>
+
+        <div>
+            <label>Số lượng</label>
+            <input type="number" name="quantity" value="<%= product.quantity %>" required>
+        </div>
+
+        <button>Cập nhật</button>
+    </form>
+</body>
+
+</html>
