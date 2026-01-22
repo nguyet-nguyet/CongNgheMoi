@@ -1,0 +1,13 @@
+<h2>Chỉnh sửa sản phẩm</h2>
+
+<form action="/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
+    <input name="name" value="<%= product.name %>">
+    <input name="price" type="number" value="<%= product.price %>">
+    <input name="quantity" type="number" value="<%= product.quantity %>">
+
+    <img src="<%= product.url_image %>" width="100">
+    <input type="hidden" name="oldImage" value="<%= product.url_image %>">
+
+    <input type="file" name="image">
+    <button>Cập nhật</button>
+</form>
